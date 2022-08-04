@@ -34,17 +34,31 @@ function myPrompts() {
     return true;
 }
 
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
+//Generating a password.
+function generatePassword() {
+   
+  var password = "";
+  for(var i = 0; i < characterlength; i++){
+      var randomnumber = Math.floor(Math.random() * allArr.length);
+      password = password + allArr[randomnumber];
+      
+  }
+  return password;
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+// Writting password to the #password input.
+function writePassword() {
+  var rigthPrompts = myPrompts();
+  if(rigthPrompts) {
+      var newPassword = generatePassword();
+      var PasswordText = document.querySelector("#password");
+
+      PasswordText.value = newPassword; 
+    
+    }
+    return true;
+ 
+  }    
