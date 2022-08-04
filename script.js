@@ -62,3 +62,9 @@ function writePassword() {
     return true;
  
   }    
+  // Generating element.
+var generateBtn = document.querySelector("#generate");
+
+// Adding event listener to generate button
+
+generateBtn.addEventListener("click", writePassword );
